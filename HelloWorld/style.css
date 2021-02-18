@@ -1,3 +1,41 @@
-h2 {
-    color: indigo;
+body {
+    margin: 0;
+    min-width: 250px;
+    font-family: 'Inter', sans-serif;
+}
+
+#header {
+    /* Sub Headline */
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 26px;
+    
+    padding: 8px 16px;
+    text-align: center;
+    background-color: #FE1251;
+    color: #FFF;    
+}
+
+.content {
+    padding: 16px;
+}
+
+.description {
+    /* Paragraph */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+
+    margin-bottom: 8px;
+}
+
+.description a {
+    color: #FE1251;
+    text-decoration: none;
+}
+
+.form-area {
+    border: 2px solid #333;
+    border-radius: 8px;
+    height: 100px;
 }
