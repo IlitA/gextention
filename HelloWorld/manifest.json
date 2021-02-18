@@ -1,15 +1,15 @@
 {
     "manifest_version": 2,
-    "name": "hello world",
+    "name": "Grover extention",
     "version": "1.0",
-    "description": "my first extention",
+    "description": "Grover extention",
     "icons": {
-        "128": "icon128.png",
-        "48": "icon48.png",
-        "16": "icon16.png"
+        "128": "icon.png",
+        "48": "icon.png",
+        "16": "icon.png"
     },
     "browser_action": {
-        "default_icon": "icon16.png",
+        "default_icon": "icon.png",
         "default_popup": "popup.html"
     }
 }
