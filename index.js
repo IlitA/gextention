@@ -36,7 +36,7 @@ chrome.tabs.query({active: true, currentWindow: true}, tabs => {
                 console.error('Error whilst parsing the page information. parsedData is undefined.');
             }
         } else {
-            if (parsedData.imageUrl) document.querySelector('img.productImg').src = parsedData.imageUrl;
+            document.querySelector('img.productImg').src = parsedData?.imageUrl ?? 'https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697';
             document.querySelector('h4.productName').innerHTML = parsedData.productName;
         }
     });
