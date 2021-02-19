@@ -16,6 +16,27 @@ body {
     color: #FFF;    
 }
 
+button {
+    /* Small Caps Headline */
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    margin: 8px 0;
+    padding: 8px 16px;
+    width: 160px;
+    background-color: #FE1251;
+    border-color: transparent;
+    color: #fff;
+    border-radius: 32px;
+}
+
+
+
+
 .content {
     padding: 16px;
 }
@@ -35,7 +56,16 @@ body {
 }
 
 .form-area {
-    border: 2px solid #333;
-    border-radius: 8px;
+    /* border: 2px solid #333;
+    border-radius: 8px; */
     height: 100px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    max-width: 100px;
 }
