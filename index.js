@@ -21,13 +21,18 @@ const postData = () => {
     })
 }
 
-const redirectToGrover = () => chrome.tabs.create({ url: 'https://frontstaging-2.getgrover.com/de-en' });
+const redirectToGrover = () => chrome.tabs.create({
+    url: 'https://frontstaging-2.getgrover.com/de-en'
+});
 
 // Initial onClick event => redirect user to Grover
 document.querySelector('.groverButton').addEventListener('click', redirectToGrover);
 
 // Get userId from grover cookies
-chrome.cookies?.get({ url: 'https://frontstaging-2.getgrover.com/de-en/for-you', name: 'user_id' }, cookie => {
+chrome.cookies?.get({
+    url: 'https://frontstaging-2.getgrover.com/de-en/for-you',
+    name: 'user_id'
+}, cookie => {
     payloadData.userId = cookie?.value;
     if (payloadData.userId) {
         document.querySelector('.groverButton').innerHTML = 'Suggest product'
@@ -38,8 +43,13 @@ chrome.cookies?.get({ url: 'https://frontstaging-2.getgrover.com/de-en/for-you',
 });
 
 // Send message to content.js requesting the parsed data from the current page
-chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    chrome.tabs.sendMessage(tabs[0].id, { type: 'getParsedData' }, parsedData => {
+chrome.tabs.query({
+    active: true,
+    currentWindow: true
+}, tabs => {
+    chrome.tabs.sendMessage(tabs[0].id, {
+        type: 'getParsedData'
+    }, parsedData => {
         if (typeof parsedData === 'undefined') {
             // We couldn't talk to the content script, probably it's not there
             if (chrome.runtime.lastError) {
@@ -48,8 +58,15 @@ chrome.tabs.query({active: true, currentWindow: true}, tabs => {
                 console.error('Error whilst parsing the page information. parsedData is undefined.');
             }
         } else {
-            payloadData = { ...payloadData, ...parsedData };
-            document.querySelector('img.productImg').src = parsedData?.externalImage ?? 'https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697';
+            payloadData = {
+                ...payloadData,
+                ...parsedData
+            };
+            if (parsedData?.externalImage) {
+                document.querySelector('img.productImg').src = parsedData?.externalImage;
+            } else {
+                document.querySelector('.groverButton').setAttribute('disabled', true);
+            }
             document.querySelector('h4.productName').innerHTML = parsedData.name;
         }
     });
