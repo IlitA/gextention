@@ -1,28 +1,71 @@
 body {
-    padding: 8px 16px;
-    border-radius: 8px;
+    margin: 0;
+    min-width: 250px;
+    font-family: 'Inter', sans-serif;
 }
 
-.header {
+#header {
+    /* Sub Headline */
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 26px;
+    
+    padding: 8px 16px;
+    text-align: center;
+    background-color: #FE1251;
+    color: #FFF;    
+}
+
+button {
+    /* Small Caps Headline */
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    margin: 8px 0;
+    padding: 8px 16px;
+    width: 160px;
+    background-color: #FE1251;
+    border-color: transparent;
+    color: #fff;
+    border-radius: 32px;
+}
+
+
+
+
+.content {
+    padding: 16px;
+}
+
+.description {
+    /* Paragraph */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+
+    margin-bottom: 8px;
+}
+
+.description a {
+    color: #FE1251;
+    text-decoration: none;
+}
+
+.form-area {
+    /* border: 2px solid #333;
+    border-radius: 8px; */
+    height: 100px;
+}
+
+.footer {
     display: flex;
     align-items: center;
 }
 
-.logo {
-    width: 32px;
-    height: 32px;
-    margin-right: 16px
-}
-
-h2 {
-    color: indigo;
-}
-
-button {
-    margin: 8px 0;
-    padding: 8px;
-    width: 160px;
-    background-color: transparent;
-    border-color: indigo;
-    border-radius: 8px;
+.footer-logo {
+    max-width: 100px;
 }
