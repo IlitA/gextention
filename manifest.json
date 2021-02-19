@@ -9,7 +9,10 @@
         "16": "assets/icon.png"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "cookies",
+        "https://*.grover.com/",
+        "https://*.getgrover.com/"
     ],
     "browser_action": {
         "default_icon": "assets/icon.png",

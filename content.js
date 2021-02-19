@@ -28,6 +28,7 @@ window.onload = () => {
     if (!parsedData.productName) parsedData.productName = document?.head?.querySelector('title')?.innerText || '';
 }
 
+// Message receiver: this is how parsed data is sent to the popup
 chrome.runtime.onMessage.addListener(
     (message, sender, sendResponse) => {
         switch (message.type) {
