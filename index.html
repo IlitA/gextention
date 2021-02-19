@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Grover extention</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="content unknownUser">
-            <div class="header">
-                <img class="headerLogo" src="./assets/Grover-logo_full_gradient-black.png" draggable="false" />
-            </div>
 
-            <div class="description">You want it? You Grover</a> it. Suggest this product for renting</div>
+<head>
+    <title>Grover extention</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-            <div class="product">
-                <img class="productImg" draggable="false" />
-                <h4 class="productName">Product Name</h4>
-            </div>
-
-            <div class="productCategory">
-                <label>Category</label>
-                <input class="productCategoryInput" />
-            </div>
-
-            <button type="button" class="groverButton">Sign in to suggest</button>
+<body>
+    <div class="content unknownUser">
+        <div class="header">
+            <img class="headerLogo" src="./assets/Grover-logo_full_gradient-black.png" draggable="false" />
         </div>
-        <script src="index.js"></script>
-    </body>
+
+        <div class="description">You want it? You Grover</a> it. Suggest this product for renting</div>
+
+        <div class="product">
+            <img alt="product Imge" class="productImg" draggable="false" />
+            <h4 class="productName">Product Name</h4>
+        </div>
+
+        <div class="productCategory">
+            <label>Category</label>
+            <select class="productCategorySelect">
+                <option key="64">Computers</option>
+                <option key="65">Phones &amp; tablets</option>
+                <option key="66">Wearables</option>
+                <option key="67">Cameras</option>
+                <option key="68">Gaming &amp; VR</option>
+                <option key="69">Home entertainment</option>
+                <option key="70">Audio &amp; music</option>
+                <option key="71">Drones</option>
+                <option key="72">E-Mobility</option>
+                <option key="0">Other</option>
+            </select>
+        </div>
+
+        <button type="button" class="groverButton">Sign in to suggest</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
 </html>

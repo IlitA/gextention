@@ -1,8 +1,10 @@
-const productCategory = document.querySelector('.productCategoryInput');
+const productCategory = document.querySelector('.productCategorySelect');
+
 let userId = '';
 
 const postData = () => {
     console.log('click', productCategory.value);
+    window.close();
 }
 
 const redirectToGrover = () => {
@@ -13,7 +15,7 @@ const redirectToGrover = () => {
 document.querySelector('.groverButton').addEventListener('click', redirectToGrover);
 
 // Get userId from grover cookies
-chrome.cookies.get({ url: 'https://frontstaging-2.getgrover.com/de-en/for-you', name: 'user_id' }, cookie => {
+chrome.cookies?.get({ url: 'https://frontstaging-2.getgrover.com/de-en/for-you', name: 'user_id' }, cookie => {
     userId = cookie?.value;
     if (userId) {
         document.querySelector('.groverButton').innerHTML = 'Suggest product'
