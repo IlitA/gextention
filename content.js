@@ -1,31 +1,31 @@
 const parsedData = {}
-parsedData.url = window.location.href;
+parsedData.externalLink = window.location.href;
 const {
     hostname
-} = new URL(parsedData.url);
-parsedData.hostname = hostname;
+} = new URL(parsedData.externalLink);
+parsedData.externalLinkTrimmed = hostname;
 
 window.onload = () => {
     // Try getting image from og:image meta tags
-    parsedData.imageUrl = document?.head?.querySelector('meta[property="og:image"]')?.content || '';
-    if (!parsedData.imageUrl) parsedData.imageUrl = document?.head?.querySelector('meta[name="og:image"]')?.content || ''; // Case: Gravis
+    parsedData.externalImage = document?.head?.querySelector('meta[property="og:image"]')?.content || '';
+    if (!parsedData.externalImage) parsedData.externalImage = document?.head?.querySelector('meta[name="og:image"]')?.content || ''; // Case: Gravis
 
     // Special cases
     switch (hostname.split('.')[1]) {
         case 'amazon':
-            parsedData.productName = document?.querySelector('#productTitle')?.innerText || '';
-            parsedData.imageUrl = document?.querySelector('#imgTagWrapperId img')?.src || '';
+            parsedData.name = document?.querySelector('#productTitle')?.innerText || '';
+            parsedData.externalImage = document?.querySelector('#imgTagWrapperId img')?.src || '';
             break;
         case 'conrad':
-            parsedData.imageUrl = document?.querySelector('#productMainImage')?.src || '';
+            parsedData.externalImage = document?.querySelector('#productMainImage')?.src || '';
             break;
         case 'idealo':
-            parsedData.imageUrl = document?.querySelector('img.productReviews-image')?.src || '';
+            parsedData.externalImage = document?.querySelector('img.productReviews-image')?.src || '';
             break;
     }
 
     // If no special case, or product name results in '', get title from document head
-    if (!parsedData.productName) parsedData.productName = document?.head?.querySelector('title')?.innerText || '';
+    if (!parsedData.name) parsedData.name = document?.head?.querySelector('title')?.innerText || '';
 }
 
 // Message receiver: this is how parsed data is sent to the popup
